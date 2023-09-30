@@ -1,7 +1,6 @@
 package br.com.fiap.cp2.view;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 
 import br.com.fiap.cp2.factory.ConnectionFactory;
 
