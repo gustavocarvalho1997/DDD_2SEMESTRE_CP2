@@ -3,16 +3,16 @@ package br.com.fiap.cp2.models;
 public class Aluno {
 	//Atributos
 	private int codigo;
-	private String primeiroNome, sobrenome, curso;
-	private int idade, anoDeInicio;
+	private String primeiroNome, sobrenome, curso, instituicao;
+	private int anoDeInicio;
 	//Construtor
-	public Aluno(int codigo, String primeiroNome, String sobrenome, String curso, int idade, int anoDeInicio) {
+	public Aluno(int codigo, String primeiroNome, String sobrenome, String curso, String instituicao, int anoDeInicio) {
 		super();
 		this.codigo = codigo;
 		this.primeiroNome = primeiroNome;
 		this.sobrenome = sobrenome;
 		this.curso = curso;
-		this.idade = idade;
+		this.instituicao = instituicao;
 		this.anoDeInicio = anoDeInicio;
 	}//ALUNO
 	//Getters
@@ -28,8 +28,8 @@ public class Aluno {
 	public String getCurso() {
 		return curso;
 	}
-	public int getIdade() {
-		return idade;
+	public String getInstituicao() {
+		return instituicao;
 	}
 	public int getAnoDeInicio() {
 		return anoDeInicio;
@@ -47,8 +47,8 @@ public class Aluno {
 	public void setCurso(String curso) {
 		this.curso = curso;
 	}
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void setIdade(String instituicao) {
+		this.instituicao = instituicao;
 	}
 	public void setAnoDeInicio(int anoDeInicio) {
 		this.anoDeInicio = anoDeInicio;
