@@ -15,6 +15,14 @@ public class Aluno {
 		this.instituicao = instituicao;
 		this.anoDeInicio = anoDeInicio;
 	}//ALUNO
+	public Aluno(String primeiroNome, String sobrenome, String curso, String instituicao, int anoDeInicio) {
+		super();
+		this.primeiroNome = primeiroNome;
+		this.sobrenome = sobrenome;
+		this.curso = curso;
+		this.instituicao = instituicao;
+		this.anoDeInicio = anoDeInicio;
+	}//ALUNO
 	//Getters
 	public int getCodigo() {
 		return codigo;
