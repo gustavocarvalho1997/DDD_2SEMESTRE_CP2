@@ -12,5 +12,4 @@ public class ConnectionFactory {
 				usuario, senha);
 		return conn;
 	}//getConnection
-	
 }//CLASS
