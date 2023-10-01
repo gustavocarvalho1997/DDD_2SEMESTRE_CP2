@@ -1,6 +1,7 @@
 package br.com.fiap.cp2.view;
 
 import java.sql.Connection;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 
@@ -29,9 +30,14 @@ public class Terminal {
 					dao.cadastrar(aluno);
 					System.out.println("Cadastro efetuado com sucesso!");
 				} else if (opcao == 2) {
-					dao.listar();
+					List<Aluno> alunos= dao.listar();
+					for(Aluno a : alunos) {
+						System.out.println(a.retornarInfoFormatadas());
+					}
 				} else if (opcao == 3 ) {
-					dao.pesquisarPorCodigo(1);
+					int codigo = Integer.parseInt(JOptionPane.showInputDialog("Informe o código do aluno"));
+					Aluno aluno = dao.pesquisarPorCodigo(codigo);
+					System.out.println(aluno.retornarInfoFormatadas());
 				} else if (opcao == 4) {
 					dao.deletar(2);
 				} else if (opcao == 5) {
