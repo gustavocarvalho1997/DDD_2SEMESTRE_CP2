@@ -18,8 +18,12 @@ public class Terminal {
 			
 			dao.cadastrar(a);
 			System.out.println("Cadastrado com sucesso");
+			System.out.println(dao.listar());
+			System.out.println("listagem feita com sucesso");
+			System.out.println(dao.pesquisarPorCodigo(1));
+			System.out.println("Pesquisa por código feita com sucesso!");
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.err.println(e.getMessage());
 		}
 	}//MAIN
 }//CLASS
