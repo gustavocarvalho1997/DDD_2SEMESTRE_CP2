@@ -20,6 +20,7 @@ public class AlunoDao implements AlunoDaoInterface{
 	private static final String LISTAR = "SELECT * FROM T_CP_ALUNO ORDER BY CODIGO";
 	private static final String PESQ_CD = "SELECT * FROM T_CP_ALUNO WHERE CODIGO = ?";
 	private static final String DELETAR = "DELETE FROM T_CP_ALUNO WHERE CODIGO = ?";
+	private static final String ATUALIZAR = "UPDATE T_CP_ALUNO SET NOME = ?, SOBRENOME = ?, CURSO = ?, INSTITUICAO = ?, ANO_INICIO = ? WHERE CODIGO = ?";
 	
 	//Construtor
 	public AlunoDao(Connection conn) {
@@ -85,15 +86,16 @@ public class AlunoDao implements AlunoDaoInterface{
 	}//Deletar FIM
 	
 	//Atualizar INICIO
-	public void atualizar(Aluno aluno) throws SQLException {
+	public void atualizar(Aluno aluno) throws SQLException, CodeNotFoundException {
+		pesquisarPorCodigo(aluno.getCodigo());
+		PreparedStatement stm = conn.prepareStatement(ATUALIZAR);
+		stm.setString(1, aluno.getPrimeiroNome());
+		stm.setString(2, aluno.getSobrenome());
+		stm.setString(3, aluno.getCurso());
+		stm.setString(4, aluno.getInstituicao());
+		stm.setInt(5, aluno.getAnoDeInicio());
+		stm.setInt(6, aluno.getCodigo());
 		
+		stm.executeUpdate();
 	}//Atualizar FIM
-	
-	
-	
-	
-	
-	
-	
-	
 }//CLASS

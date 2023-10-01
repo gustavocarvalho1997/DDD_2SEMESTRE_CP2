@@ -11,5 +11,5 @@ public interface AlunoDaoInterface {
 	public List<Aluno> listar() throws SQLException;
 	public Aluno pesquisarPorCodigo(int codigo) throws SQLException, CodeNotFoundException;
 	public void deletar(int codigo) throws SQLException, CodeNotFoundException;
-	public void atualizar(Aluno aluno) throws SQLException;
+	public void atualizar(Aluno aluno) throws SQLException, CodeNotFoundException;
 }//Interface

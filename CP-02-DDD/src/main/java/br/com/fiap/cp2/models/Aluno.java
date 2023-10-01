@@ -67,4 +67,11 @@ public class Aluno {
 		return "Aluno [ Código: " + codigo + ", primeiroNome:" + primeiroNome + ", sobrenome: " + sobrenome + ", curso: "
 				+ curso + " ]";
 	}//toString
+	
+	//Métodos
+	public String retornarInfoFormatadas() {
+		String formatada = String.format("\nCódigo do Aluno: %d \nNome Completo: "
+				+ "%s %s \nCurso: %s \nInstituição: %s \nAno de Inicio: %d", codigo,primeiroNome,sobrenome,curso,instituicao,anoDeInicio);
+		return formatada;
+	}//retornarInfoFormatadas
 }//CLASS
