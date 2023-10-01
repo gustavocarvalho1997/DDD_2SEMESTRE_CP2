@@ -17,8 +17,8 @@ public class Terminal {
 			Connection conn = ConnectionFactory.getConnection(usuario, senha);
 			AlunoDao dao = new AlunoDao(conn);
 			
+			JOptionPane.showConfirmDialog(null, "Bem vindo(a), a seguir serão mostradas as opções de interação com o banco de dados criado!");
 			while(true) {
-				JOptionPane.showConfirmDialog(null, "Bem vindo(a), a seguir serão mostradas as opções de interação com o banco de dados criado!");
 				int opcao = Integer.parseInt(JOptionPane.showInputDialog("Digite o número para selecionar sua opção:\n1 - Cadastrar um aluno\n2 - Listar os alunos\n3 - Pesquisar um aluno pelo seu código\n4 - Deletar um aluno do banco pelo seu respectivo código\n5 - Atualizar as informações de um aluno\n6 - Sair"));
 				if (opcao == 1) {
 					String primeiroNome = JOptionPane.showInputDialog("Informe o primeiro nome do aluno: ");
