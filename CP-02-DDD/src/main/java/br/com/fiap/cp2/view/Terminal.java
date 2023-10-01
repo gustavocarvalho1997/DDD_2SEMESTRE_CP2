@@ -43,7 +43,14 @@ public class Terminal {
 					dao.deletar(codigo);
 					System.out.println("Registro deletado com sucesso!");
 				} else if (opcao == 5) {
-					dao.atualizar(null);
+					int codigo = Integer.parseInt(JOptionPane.showInputDialog("Informe o código do aluno que serão atualizadas as informações:"));
+					String primeiroNome = JOptionPane.showInputDialog("Informe o primeiro nome do aluno: ");
+					String sobrenome = JOptionPane.showInputDialog("Informe o sobrenome do aluno:");
+					String curso = JOptionPane.showInputDialog("Informe o curso do aluno:");
+					String instituicao = JOptionPane.showInputDialog("Informe a instituição de ensino:");
+					int anoDeInicio = Integer.parseInt(JOptionPane.showInputDialog("Informe o ano de início desse aluno:\n Ex: 2023"));
+					Aluno aluno = new Aluno(codigo, primeiroNome, sobrenome, curso, instituicao, anoDeInicio);
+					dao.atualizar(aluno);
 				} else if (opcao == 6) {
 					break;
 				} else {
