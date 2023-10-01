@@ -51,6 +51,7 @@ public class Terminal {
 					int anoDeInicio = Integer.parseInt(JOptionPane.showInputDialog("Informe o ano de início desse aluno:\n Ex: 2023"));
 					Aluno aluno = new Aluno(codigo, primeiroNome, sobrenome, curso, instituicao, anoDeInicio);
 					dao.atualizar(aluno);
+					System.out.println("Atualização feita com sucesso");
 				} else if (opcao == 6) {
 					break;
 				} else {
