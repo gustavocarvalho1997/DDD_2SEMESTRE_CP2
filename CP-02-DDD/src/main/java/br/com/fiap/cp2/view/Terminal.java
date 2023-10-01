@@ -22,6 +22,8 @@ public class Terminal {
 			System.out.println("listagem feita com sucesso");
 			System.out.println(dao.pesquisarPorCodigo(1));
 			System.out.println("Pesquisa por código feita com sucesso!");
+			dao.deletar(1);
+			System.out.println(dao.listar());
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}

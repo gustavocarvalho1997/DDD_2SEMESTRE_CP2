@@ -86,7 +86,6 @@ public class AlunoDao implements AlunoDaoInterface{
 	
 	//Atualizar INICIO
 	public void atualizar(Aluno aluno) throws SQLException {
-		// TODO Auto-generated method stub
 		
 	}//Atualizar FIM
 	
