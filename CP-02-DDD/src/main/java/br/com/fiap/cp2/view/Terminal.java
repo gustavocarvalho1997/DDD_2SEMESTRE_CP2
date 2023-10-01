@@ -39,7 +39,9 @@ public class Terminal {
 					Aluno aluno = dao.pesquisarPorCodigo(codigo);
 					System.out.println(aluno.retornarInfoFormatadas());
 				} else if (opcao == 4) {
-					dao.deletar(2);
+					int codigo = Integer.parseInt(JOptionPane.showInputDialog("Informe o código do aluno que deseja efetuas a exclusão do registro:"));
+					dao.deletar(codigo);
+					System.out.println("Registro deletado com sucesso!");
 				} else if (opcao == 5) {
 					dao.atualizar(null);
 				} else if (opcao == 6) {
