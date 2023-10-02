@@ -2,7 +2,7 @@
 
 # Data Acess Object
 
-Nesse Checkpoint de Domain Driven Design, foi feito um exemplo simples de DAO utilizando a linguagem de programação Java em conjunto com o banco de dados da Oracle, sendo possivel realizar as funções básicas de um CRUD como pesquisar, deletar, criar e atualizar algum dado no banco. Sendo composto pelos senguintes pacotes: 
+Nesse Checkpoint de Domain Driven Design, foi feito um exemplo simples de DAO utilizando a linguagem de programação Java em conjunto com o banco de dados da Oracle, sendo possivel realizar as funções básicas de um CRUD como pesquisar, deletar, criar e atualizar algum dado no banco. Sendo composto pelos seguintes pacotes: 
 
 ![image](https://github.com/gustavocarvalho1997/DDD_2SEMESTRE_CP2/assets/79180740/37bab22c-69d2-4c5f-b2fe-131a5b88330d)
 
