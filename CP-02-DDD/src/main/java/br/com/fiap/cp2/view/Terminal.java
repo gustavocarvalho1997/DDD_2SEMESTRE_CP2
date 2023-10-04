@@ -11,10 +11,11 @@ import br.com.fiap.cp2.models.Aluno;
 
 public class Terminal {
 	public static void main(String[] args) {
+		Connection conn = null;
 		try {
 			String usuario = "RM552466";
 			String senha = "160297";
-			Connection conn = ConnectionFactory.getConnection(usuario, senha);
+			conn = ConnectionFactory.getConnection(usuario, senha);
 			AlunoDao dao = new AlunoDao(conn);
 			
 			JOptionPane.showConfirmDialog(null, "Bem vindo(a), a seguir serão mostradas as opções de interação com o banco de dados criado!");
@@ -60,6 +61,14 @@ public class Terminal {
 			}//While
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
+		} finally {
+			try {
+				if(conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}//MAIN
 }//CLASS
