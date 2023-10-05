@@ -9,6 +9,7 @@ import br.com.fiap.cp2.models.Aluno;
 public interface AlunoDaoInterface {
 	public void cadastrar(Aluno aluno) throws SQLException;
 	public List<Aluno> listar() throws SQLException;
+	public List<Aluno> pesquisarPorNome(String nome) throws SQLException;
 	public Aluno pesquisarPorCodigo(int codigo) throws SQLException, CodeNotFoundException;
 	public void deletar(int codigo) throws SQLException, CodeNotFoundException;
 	public void atualizar(Aluno aluno) throws SQLException, CodeNotFoundException;
