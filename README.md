@@ -10,7 +10,7 @@ Nesse Checkpoint de Domain Driven Design, foi feito um exemplo simples de DAO ut
 
 Nela se encontram as funções que o DAO irá implementar, mostrando seus nomes, retornos, argumentos e as exceções que se esperam.
 
-![image](https://github.com/gustavocarvalho1997/DDD_2SEMESTRE_CP2/assets/79180740/0c7a2ad1-96cd-4996-8e46-fb585105579d)
+![image](https://github.com/gustavocarvalho1997/DDD_2SEMESTRE_CP2/assets/79180740/f5d1d5a1-4884-4983-8454-442dc93ffac2)
 
 ## Exception
 
