@@ -21,7 +21,7 @@ public class Terminal {
 			
 			JOptionPane.showConfirmDialog(null, "Bem vindo(a), a seguir serão mostradas as opções de interação com o banco de dados criado!");
 			while(true) {
-				int opcao = Integer.parseInt(JOptionPane.showInputDialog("Digite o número para selecionar sua opção:\n1 - Cadastrar um aluno\n2 - Listar os alunos\n3 - Pesquisar um aluno pelo seu código\n4 - Deletar um aluno do banco pelo seu respectivo código\n5 - Atualizar as informações de um aluno\n6 - Sair"));
+				int opcao = Integer.parseInt(JOptionPane.showInputDialog("Digite o número para selecionar sua opção:\n1 - Cadastrar um aluno\n2 - Listar os alunos\n3 - Pesquisar um aluno pelo seu código\n4 - Deletar um aluno do banco pelo seu respectivo código\n5 - Atualizar as informações de um aluno\n6 - Para pesquisar alunos pelo primeiro nome\n7 - Sair"));
 				if (opcao == 1) {
 					String primeiroNome = JOptionPane.showInputDialog("Informe o primeiro nome do aluno: ");
 					String sobrenome = JOptionPane.showInputDialog("Informe o sobrenome do aluno:");
@@ -55,6 +55,12 @@ public class Terminal {
 					dao.atualizar(aluno);
 					System.out.println("Atualização feita com sucesso");
 				} else if (opcao == 6) {
+					String nome = JOptionPane.showInputDialog("Informe o primeiro nome que deseja pesquisar: ");
+					List<Aluno> lista = dao.pesquisarPorNome(nome);
+					for(Aluno aluno : lista) {
+						System.out.println(aluno.retornarInfoFormatadas());
+					}
+				} else if( opcao == 7) {
 					break;
 				} else {
 					System.out.println("Opção selecionada não reconhecida!");
