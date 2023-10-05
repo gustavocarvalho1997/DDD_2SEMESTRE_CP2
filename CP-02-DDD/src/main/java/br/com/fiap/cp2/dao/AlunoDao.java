@@ -18,6 +18,7 @@ public class AlunoDao implements AlunoDaoInterface{
 	private static final String CADASTRAR = "INSERT INTO T_CP_ALUNO (CODIGO, NOME, SOBRENOME, CURSO, INSTITUICAO, ANO_INICIO)"
 			+ " VALUES (SEQ_CP_ALUNO.NEXTVAL, ?, ?, ?, ?, ?)";
 	private static final String LISTAR = "SELECT * FROM T_CP_ALUNO ORDER BY CODIGO";
+	private static final String PESQ_NM = "SELECT * FROM T_CP_ALUNO WHERE NOME = ? ORDER BY CODIGO";
 	private static final String PESQ_CD = "SELECT * FROM T_CP_ALUNO WHERE CODIGO = ?";
 	private static final String DELETAR = "DELETE FROM T_CP_ALUNO WHERE CODIGO = ?";
 	private static final String ATUALIZAR = "UPDATE T_CP_ALUNO SET NOME = ?, SOBRENOME = ?, CURSO = ?, INSTITUICAO = ?, ANO_INICIO = ? WHERE CODIGO = ?";
@@ -62,6 +63,19 @@ public class AlunoDao implements AlunoDaoInterface{
 		}
 		return lista;
 	}//LISTAR FIM
+	
+	//PesquisarPorNome INICIO
+	public List<Aluno> pesquisarPorNome(String nome) throws SQLException {
+		PreparedStatement stm = conn.prepareStatement(PESQ_NM);
+		stm.setString(1, nome);
+		ResultSet rs = stm.executeQuery();
+		List<Aluno> lista = new ArrayList<Aluno>();
+		while(rs.next()) {
+			Aluno aluno = parse(rs);
+			lista.add(aluno);
+		}
+		return lista;
+	}//PesquisarPorNome FIM
 	
 	//PesquisarPorCodigo INICIO
 	public Aluno pesquisarPorCodigo(int codigo) throws SQLException, CodeNotFoundException {
